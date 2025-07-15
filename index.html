@@ -166,7 +166,7 @@
           </div>
         </section>
 
-        <section class="projects-section" id="projects">
+        <section class="projects-section" id="projects" id="projects-container">
           <div class="container">
             <h2>Проекты</h2>
             <div class="projects-grid">
@@ -274,13 +274,18 @@
                 </div>
               </div>
             </div>
-            <div class="project-btn-wrapper">
+            <!--<div class="project-btn-wrapper">
               <a
                 href="https://github.com/dg0st"
                 class="project-btn"
                 target="_blank"
                 >Смотреть еще</a
               >
+            </div>-->
+            <div class="project-btn-wrapper">
+              <button class="project-btn" id="load-more-btn">
+                Показать ещё
+              </button>
             </div>
           </div>
         </section>
@@ -372,6 +377,6 @@
       </footer>
     </div>
 
-    <script src="scripts/main.js"></script>
+    <script src="./assets/js/loadprojects.js"></script>
   </body>
 </html>
