@@ -1,10 +1,22 @@
-const allProjects = [/* Массив всех проектов */];
+let allProjects = [];
 let visibleCount = 4;
 const increment = 4;
 
 const container = document.getElementById('projects-container');
 const loadMoreBtn = document.getElementById('load-more-btn');
 
+// Загружаем данные из JSON
+fetch('projects.json')
+  .then(response => response.json())
+  .then(data => {
+    allProjects = data;
+    renderProjects();
+  })
+  .catch(error => {
+    console.error('Ошибка при загрузке JSON:', error);
+  });
+
+// Функция отрисовки карточек
 function renderProjects() {
   container.innerHTML = '';
   for (let i = 0; i < visibleCount && i < allProjects.length; i++) {
@@ -22,9 +34,8 @@ function renderProjects() {
   }
 }
 
+// Обработчик кнопки
 loadMoreBtn.addEventListener('click', () => {
   visibleCount += increment;
   renderProjects();
 });
-
-renderProjects();
